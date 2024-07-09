@@ -2,6 +2,7 @@ package cafebabe
 
 import (
 	"io"
+	"log"
 	"reflect"
 )
 
@@ -94,6 +95,7 @@ func (i *CpInfo) PrepareInfo() reflect.Type {
 		return reflect.TypeFor[ConstantInvokeDynamicInfo]()
 	}
 
+	log.Println("invalid CpInfoTag:", i.Tag) // TODO
 	return nil
 }
 
